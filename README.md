@@ -1,5 +1,4 @@
-# Papeline_project
-#Prova esame caricamento progetto
+# Workflow_project_esame
 
 1. Controllo qualità raw reads
 2. Valutazione eventuale step pre-processing
