@@ -40,7 +40,7 @@ PS C:\Users\valen\Desktop\tec_seq>  scp -i studentkey.pem franza@15.161.204.72:/
 SRR15093882_qc_report.html                                                            100% 1111KB   2.8MB/s   00:00
 PS C:\Users\valen\Desktop\tec_seq>
 
-# Mapping - Allineamento whole genome
+# Trimming
 
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data$ mkdir trimmed
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data$ fastp --in1 SRR15093882_1.fastq.gz \
@@ -160,7 +160,7 @@ PS C:\Users\valen\Desktop\tec_seq>  scp -i studentkey.pem franza@15.161.204.72:/
 SRR15093882_trimmed_qc_report.html                                                    100% 1109KB   2.9MB/s   00:00
 PS C:\Users\valen\Desktop\tec_seq>
 
-# Allineamento sequenze
+# Mapping 
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data mkdir map_reads
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data$ bwa mem \
   -t 4 \
@@ -187,7 +187,7 @@ SRR15093882.sam
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ ls
 SRR15093882.sam  SRR15093882.sorted.bam  SRR15093882.sorted.bam.bai
 
-#Estrazione statistiche di allineamento
+#Estrazione statistiche di allineamento 
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ samtools stats SRR15093882.sorted.bam > qc/SRR15093882.samtools.stats
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ samtools flagstat SRR15093882.sorted.bam > qc/SRR15093882.samtools.flagstat
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ samtools depth SRR15093882.sorted.bam > qc/SRR15093882.samtools.depth
@@ -216,13 +216,13 @@ SRR15093882.samtools.depth  SRR15093882.samtools.flagstat  SRR15093882.samtools.
 SRR15093882.samtools.flagstat (END)
 
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads/qc$ less SRR15093882.samtools.stats
-# This file was produced by samtools stats (1.13+htslib-1.13) and can be plotted using plot-bamstats
-# This file contains statistics for all reads.
-# The command line was:  stats SRR15093882.sorted.bam
-# CHK, Checksum [2]Read Names   [3]Sequences    [4]Qualities
-# CHK, CRC32 of reads which passed filtering followed by addition (32bit overflow)
+This file was produced by samtools stats (1.13+htslib-1.13) and can be plotted using plot-bamstats
+This file contains statistics for all reads.
+The command line was:  stats SRR15093882.sorted.bam
+CHK, Checksum [2]Read Names   [3]Sequences    [4]Qualities
+CHK, CRC32 of reads which passed filtering followed by addition (32bit overflow)
 CHK     f8ad76d3        589a2546        3d12a0e4
-# Summary Numbers. Use `grep ^SN | cut -f 2-` to extract this part.
+Summary Numbers. Use `grep ^SN | cut -f 2-` to extract this part.
 SN      raw total sequences:    6617144 # excluding supplementary and secondary reads
 SN      filtered sequences:     0
 SN      sequences:      6617144
@@ -257,7 +257,7 @@ SRR15093882.samtools.stats
 
 #Allineamento alternativo: singolo cromosoma (chr 5)
 # Trovare link chr5 --> https://genome.ucsc.edu/cgi-bin/hgGateway--> Downloads --> Dec. 2013 (GRCh38/hg38)
---> Sequence data by chromosome --> chr5.fa.gz link (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr5.fa.gz)
+#--> Sequence data by chromosome --> chr5.fa.gz link (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr5.fa.gz)
 
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data$ wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr5.fa.gz
 --2025-07-03 09:02:58--  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr5.fa.gz
@@ -310,7 +310,8 @@ SRR15093882_chr5.sam  qc_chr5
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/all_chr5$ samtools view -b -o SRR15093882_chr5.bam SRR15093882_chr5.sam
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/all_chr5$ samtools sort -T SRR15093882_chr5.temp -o SRR15093882_chr5.sorted.bam SRR15093882_chr5.bam && samtools index SRR15093882_chr5.sorted.bam
 [bam_sort_core] merging from 2 files and 1 in-memory blocks...
-#Elaborazione statistica 
+
+#Elaborazione statistica chr5
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/all_chr5$ ls
 SRR15093882_chr5.bam  SRR15093882_chr5.sam  SRR15093882_chr5.sorted.bam  SRR15093882_chr5.sorted.bam.bai  qc_chr5
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/all_chr5$ samtools stats SRR15093882_chr5.sorted.bam > qc_chr5/SRR15093882.samtools.stats
