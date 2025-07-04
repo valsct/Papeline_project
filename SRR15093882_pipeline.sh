@@ -470,38 +470,43 @@ chr20: 90.87% coverage ≥20x
 chr21: 57.69% coverage ≥20x
 chr22: 57.25% coverage ≥20x
 
-(bioinf) franza@ip-172-31-6-96:~/my_pro/data$ for chr in {1..22}; do
-    samtools depth -a -r chr${chr} map_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt
-    TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt)
-    COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l)
-    if [ $TOTAL_BASES -gt 0 ]; then
-        PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l)
-        echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x"
-                fi
-done
-chr1: 0% coverage ≥20x
-chr2: 0% coverage ≥20x
-chr3: 0% coverage ≥20x
-chr4: 0% coverage ≥20x
-chr5: 0% coverage ≥20x
-chr6: 0% coverage ≥20x
-chr7: 0% coverage ≥20x
-chr8: 0% coverage ≥20x
-chr9: 0% coverage ≥20x
-chr10: 0% coverage ≥20x
-chr11: .01% coverage ≥20x
-chr12: 0% coverage ≥20x
-chr13: 0% coverage ≥20x
-chr14: 0% coverage ≥20x
-chr15: .01% coverage ≥20x
-chr16: 0% coverage ≥20x
-chr17: .03% coverage ≥20x
-chr18: 0% coverage ≥20x
-chr19: .01% coverage ≥20x
-chr20: .01% coverage ≥20x
-chr21: .01% coverage ≥20x
-chr22: 0% coverage ≥20x
+(bioinf) franza@ip-172-31-6-96:~/my_pro/data$ bam_file="map_reads/SRR15093882.sorted.bam"
+outp="coverage_analysis"
 
+for i in {1..22}; do
+
+    samtools depth -a -r chr${i} "$bam_file" > "$outp/chr${i}_coverage.txt"
+
+    tot_basi=$(wc -l < "$outp/chr${i}_coverage.txt")
+    copertura=$(awk '$3>=20' "$outp/chr${i}_coverage.txt" | wc -l)
+
+    if [ $tot_basi -gt 0 ]; then
+        percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l)
+        echo "chr${i}: ${percentuale}% delle basi hanno copertura ≥20x"
+    fi
+done
+chr1: 0% delle basi hanno copertura ≥20x
+chr2: 0% delle basi hanno copertura ≥20x
+chr3: 0% delle basi hanno copertura ≥20x
+chr4: 0% delle basi hanno copertura ≥20x
+chr5: 0% delle basi hanno copertura ≥20x
+chr6: 0% delle basi hanno copertura ≥20x
+chr7: 0% delle basi hanno copertura ≥20x
+chr8: 0% delle basi hanno copertura ≥20x
+chr9: 0% delle basi hanno copertura ≥20x
+chr10: 0% delle basi hanno copertura ≥20x
+chr11: .01% delle basi hanno copertura ≥20x
+chr12: 0% delle basi hanno copertura ≥20x
+chr13: 0% delle basi hanno copertura ≥20x
+chr14: 0% delle basi hanno copertura ≥20x
+chr15: .01% delle basi hanno copertura ≥20x
+chr16: 0% delle basi hanno copertura ≥20x
+chr17: .03% delle basi hanno copertura ≥20x
+chr18: 0% delle basi hanno copertura ≥20x
+chr19: .01% delle basi hanno copertura ≥20x
+chr20: .01% delle basi hanno copertura ≥20x
+chr21: .01% delle basi hanno copertura ≥20x
+chr22: 0% delle basi hanno copertura ≥20x
 
 #Selezionare 4 geni appartenenti al cromosoma scelto, tramite la lista in https://www.oncokb.org/cancer-genes, ed estrarre le rispettive coperture. 
 #https://www.oncokb.org/cancer-genes --> search gene --> summary --> Ensembl Gene	ENSG..(GRCh37/GRCh38) --> GRCh38 --> Location (copiare e incolla la posizione)
