@@ -1,0 +1,32 @@
+#Scaricare file su pc da terminale
+
+PS C:\Users\valen\Desktop\tec_seq> scp -r -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/coverage_analysis C:\Users\valen\Desktop\tec_seq
+chr10_coverage.txt                                                                                                          0%   15MB 426.8KB/s 1:27:00 ETA
+PS C:\Users\valen\Desktop\tec_seq> scp -r -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/map_reads/qc/SRR15093882.samtools.stats .
+SRR15093882.samtools.stats                                                                                                100%   99KB 488.2KB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq> scp -r -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/map_reads/qc/SRR15093882.samtools.depth .
+SRR15093882.samtools.depth                                                                                                100% 6559KB  10.7MB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq> scp -r -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/all_chr5/qc_chr5 C:/Users/valen/Desktop/tec_seq/
+SRR15093882.samtools.depth                                                                                                100%  833KB   2.5MB/s   00:00
+SRR15093882.samtools.flagstat                                                                                             100%  507     6.9KB/s   00:00
+SRR15093882_all.samtools.depth                                                                                            100% 2837MB  16.4MB/s   02:52
+SRR15093882.samtools.stats                                                                                                100%  203KB   1.1MB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq>
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/map_reads/qc/SRR15093882.samtools.flagstat .
+SRR15093882.samtools.flagstat                                                                                             100%  522     6.3KB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/all_chr5/qc_chr/5SRR15093882.samtools.flagstat .
+C:\WINDOWS\System32\OpenSSH\scp.exe: /home/franza/my_pro/data/all_chr5/qc_chr/5SRR15093882.samtools.flagstat: No such file or directory
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/all_chr5/qc_chr/SRR15093882.samtools.flagstat .
+C:\WINDOWS\System32\OpenSSH\scp.exe: /home/franza/my_pro/data/all_chr5/qc_chr/SRR15093882.samtools.flagstat: No such file or directory
+PS C:\Users\valen\Desktop\tec_seq> ^C
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/all_chr5/qc_chr5/SRR15093882.samtools.flagstat .
+SRR15093882.samtools.flagstat                                                                                             100%  507     5.9KB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/map_reads/qc/SRR15093882.samtools.flagstat .
+SRR15093882.samtools.flagstat                                                                                             100%  522     6.1KB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/all_chr5/qc_chr5/SRR15093882.samtools.flagstat flagstat_chr5.txt
+SRR15093882.samtools.flagstat                                                                                             100%  507     5.7KB/s   00:00    
+
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_project/data/output/qc/SRR15093882_qc_report.html .
+SRR15093882_qc_report.html         ^C
+PS C:\Users\valen\Desktop\tec_seq> scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_project/data/output/Trimm_e/SRR15093882_trimmed_qc_report.html .
+SRR15093882_trimmed_qc_report.html                                                    100% 1107KB   2.8MB/s   00:00
