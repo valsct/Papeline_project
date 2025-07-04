@@ -1,0 +1,502 @@
+#history
+(bioinf) franza@ip-172-31-6-96:~/my_pro$ history
+    5  mkdir all
+    6  all
+    7  cd all
+    8  wget ftp://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+    9  gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+   10  df -h
+   11  cd ..
+   12  cd..
+   13  cd ..
+   14  bwa mem   -t 4   -M resources/Homo_sapiens.GRCh38.dna.primary_assembly.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz | samtools sort   -T all/SRR15093882.temp   -o all/SRR15093882.piped.sorted.bam
+   15  cd ..
+   16  ls -lh resources/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+   17   ls -lh resources/
+   18   ls -lh /resources/
+   19  cd my_project
+   20  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz   | samtools sort   -T all/SRR15093881.temp   -o all/SRR1509388.piped.sorted.bam   -
+   21  ls -lh trimmed/SRR15093882_1.trimmed.fq.gz
+   22  cd data
+   23  cd output
+   24  cd trimmed
+   25  ls
+   26  ls -lh trimmed/SRR15093882_1.trimmed.fq.gz
+   27  ls -lh /SRR15093882_1.trimmed.fq.gz
+   28  ls -lh SRR15093882_1.trimmed.fq.gz
+   29  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz   | samtools sort   -T output//SRR15093881.temp   -o output/SRR1509388.piped.sorted.bam   -
+   30   bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -T output//SRR15093881.temp   -o output/SRR1509388.piped.sorted.bam   -
+   31  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -T output/SRR15093882.temp   -o output/SRR15093882.piped.sorted.bam   -
+   32  ls
+   33  mkdir allineam
+   34  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -T allineam/SRR15093882.temp   -o allineam/SRR15093882.piped.sorted.bam   -
+   35  source .bashrc
+   36  conda activate bioinf
+   37  cd my_project/
+   38  bwa mem
+   39  bwa mem
+   40  bwa mem -t 4 -M
+   41  cd data
+   42  cd output
+   43  cd trimmed
+   44  cd allineam/
+   45  ls
+   46  cd..
+   47  cd ..
+   48  ls
+   49  samtools view -h SRR15093882.piped.sorted.bam
+   50  cd allineam/
+   51  samtools view -h SRR15093882.piped.sorted.bam
+   52  source .bashrc
+   53  conda activate bioinf
+   54  cd my_project
+   55  cd data
+   56  cd output
+   57  cd trimmed
+   58  cd allineam
+   59  ls
+   60  rm SRR15093882.piped.sorted.bam
+   61  cd ..
+   62  source .bashrc
+   63  conda activate bioinf
+   64  cd my_project/
+   65  cd data
+   66   cd output
+   67  cd trimmed
+   68  ls
+   69  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -o output/SRR15093882.piped.sorted.bam \
+   70  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -o output/SRR15093882.piped.sorted.bam
+   71  ls
+   72  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.trimmed.fq.gz   SRR15093882_2.trimmed.fq.gz   | samtools sort   -o allineam/SRR15093882.piped.sorted.bam
+   73  cd allineam
+   74  ls
+   75  samtools view -h SRR15093882.piped.sorted.bam > SRR15093882.sam
+   76  ls
+   77  samtools view -h SRR15093882.piped.sorted.bam
+   78  source .bashrc
+   79  conda activate bioinf
+   80  cd my_project
+   81  cd data
+   82  cd output
+   83  cd trimmed
+   84  cd allineam
+   85  ls
+   86  mkdic qc
+   87  mkdir qc
+   88   samtools stats   -d   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.stats
+   89  samtools flagstat   SRR150938821.piped.sorted.bam > qc/SRR15093882.samtools.flagstat
+   90  samtools depth   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.depth
+   91    samtools stats   -d   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.stats
+   92  samtools flagstat   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.flagstat
+   93  samtools depth   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.depth
+   94  cd qc
+   95  ls
+   96  cd ..
+   97
+   98    samtools stats   -d   SRR15093882.sorted.bam > qc/SRR15093882.samtools.stats
+   99  samtools flagstat   SRR15093882.sorted.bam > qc/SRR15093882.samtools.flagstat
+  100  samtools depth   SRR15093882.sorted.bam > qc/SRR15093882.samtools.depth
+  101  samtools stats   -d   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.stats
+  102  samtools flagstat   SRR150938821.piped.sorted.bam > qc/SRR15093882.samtools.flagstat
+  103  samtools depth   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.depth
+  104    samtools stats   -d   SRR15093882.sorted.bam > qc/SRR15093882.samtools.stats
+  105  samtools flagstat   SRR15093882.sorted.bam > qc/SRR15093882.samtools.flagstat
+  106  samtools depth   SRR15093882.sorted.bam > qc/SRR15093882.samtools.depth
+  107
+  108  samtools depth   -r chr12:25204333-25251849   SRR14455401.sorted.bam > qc/SRR14455401.samtools.depth.KRAS
+  109  samtools stats   -d   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.stats
+  110  samtools flagstat   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.flagstat
+  111  samtools depth   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.depth
+  112  samtools stats   -d   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.stats
+  113  samtools flagstat   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.flagstat
+  114  samtools depth   SRR15093882.piped.sorted.bam > qc/SRR15093882.samtools.depth
+  115  cd qc
+  116  less SRR15093882.samtools.stats
+  117  cat SRR15093882.samtools.flagstat
+  118  ls
+  119  cd ..
+  120  cd ..
+  121  mkdir trimmed_repaired
+  122  ls
+  123  zcat SRR15093882_1.trimmed.fq.gz | sed 's/\.[0-9]$//' | gzip > trimmed_repaired/SRR15093882_1.repaired.fq.gz
+  124  zcat SRR15093882_2.trimmed.fq.gz | sed 's/\.[0-9]$//' | gzip > trimmed_repaired/SRR15093882_2.repaired.fq.g
+  125  cd trimmed_repaired
+  126  ls
+  127  rm SRR15093882_2.repaired.fq.g
+  128  cd ..
+  129   zcat SRR15093882_2.trimmed.fq.gz | sed 's/\.[0-9]$//' | gzip > trimmed_repaired/SRR15093882_2.repaired.fq.gz
+  130  cd trimmed_repaired/
+  131  ls
+  132  mkdir allin
+  133  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.repaired.fq.gz   SRR15093882_2.repaired.fq.gz   | samtools sort   -o allin/SRR15093882.bam \
+  134  source .bashrc
+  135  conda activate bioinf
+  136  cd my_project
+  137  cd data
+  138  cd output
+  139  cd trimmed
+  140  cd trimmed_repaired/
+  141  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.repaired.fq.gz   SRR15093882_2.repaired.fq.gz   | samtools sort   -o allin/SRR15093882.bam \
+  142  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.repaired.fq.gz   SRR15093882_2.repaired.fq.gz   -o allin/SRR15093882.sam \
+  143  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.repaired.fq.gz   SRR15093882_2.repaired.fq.gz   -o allin/SRR15093882.sam
+  144  bwa mem   -t 4   -M   /resources/GRCh38.primary_assembly.genome.fa   SRR15093882_1.repaired.fq.gz   SRR15093882_2.repaired.fq.gz   -o allin/SRR15093882.bam
+  145  cd allin/
+  146  ls
+  147  head -n 1000 SRR15093882.sam | less
+  148  grep "SA" SRR15093882.sam | less
+  149  grep "SA" SRR15093882.sam | wc -l
+  150  29231
+  151  grep "SA" SRR15093882.sam | wc -l
+  152  grep "SA" SRR15093882.sam | cut -f1 | sort | uniq | wc -l
+  153  12509
+  154  samtools view   -b   -o SRR15093882.bam   SRR15093882.sam
+  155  samtools view   -b   -o SRR15093882_a.bam   SRR15093882.sam
+  156  samtools index SRR15093882.sorted.bam
+  157  samtools index SRR15093882.sorted_a.bam
+  158  source .bashrc
+  159  conda activate bioinf
+  160  cd my_project
+  161  ls
+  162  rm Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz scripts  results docs
+  163  ls
+  164  rm script
+  165  rm scripts
+  166  rmdir scripts results
+  167  ls
+  168  cd allign
+  169  ls
+  170  qc
+  171  cd qc
+  172  ls
+  173  cd ..
+  174  cd ..
+  175  rmdir allign
+  176   rmdir allign
+  177  rm -r allign
+  178  ls
+  179  cd docs
+  180  ls
+  181  cd ..
+  182  rm -r docs
+  183  ls
+  184  cd data
+  185  ls
+  186  source .bash
+  187  conda activate bioinf
+  188  source .bash
+  189  ource .bashrc
+  190  source .bashrc
+  191   conda activate bioinf
+  192  cd my_project
+  193  cd data
+  194  cd output
+  195  cd trimmed
+  196  ls
+  197  fastqc -o qc/ SRR15093882_1.trimmed.fq.gz SRR15093882_2.trimmed.fq.gz
+  198  zcat SRR15093882_1.fastq.gz | wc -l | awk '{print $1/4}'
+  199  zcat SRR15093882_1.trimmed.fq.gz | wc -l | awk '{print $1/4}'
+  200  zcat SRR15093882_1.trimmed.fq.gz | awk 'NR%4==2{sum+=length($0)}END{print sum/(NR/4)}'
+  201  pwd
+  202  cd qc
+  203  ls
+  204  cd ..
+  205  cd ..
+  206  cd ..
+  207  cd ..
+  208  cd ..
+  209  rm -r my_project
+  210  ls
+  211  rm -r Giorno2  Giorno3
+  212  cd test
+  213  ls
+  214  rm -r test
+  215  rmdir test
+  216  cd ..
+  217  mkdir my_pro
+  218  mkdir data
+  219  cd data wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz
+  220  cd data
+  221  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz
+  222  ls
+  223  rm SRR15093882_1.fastq.gz  SRR15093882_1.fastq.gz.1
+  224  ls
+  225  source .bashrc
+  226  conda activate bioinf
+  227  cd my_pro
+  228  cd data
+  229  ls
+  230  mkdir data
+  231  cd data
+  232  wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_2.fastq.gz
+  233  ls
+  234  mkdir qc
+  235  fastqc -t 2 -o qc *.fastq.gz
+  236  ls
+  237  multiqc . -n SRR15093882_qc_report.html
+  238  cd qc
+  239  ls
+  240  cd ..
+  241  ls
+  242  pwd
+  243  source .bashrc
+  244  conda activate bioinf
+  245  cd data
+  246  ls
+  247  cd ..
+  248  cd my_pro
+  249  cd data
+  250  ls
+  251  mkdir trimmed
+  252  fastp --in1 SRR15093882_1.fastq.gz --in2  SRR15093882_2.fastq.gz  --out1 trimmed/SRR15093882_1.trimmed.fq.gz --out2 trimmed/SRR15093882_2.trimmed.fq.gz --adapter_sequence TGGAATTCTCGGGTGCCAAGG --adapter_sequence_r2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+  253  cd trimmed
+  254  ls
+  255  mkdir qc
+  256  fastqc -t 2 -o qc *.fq.gz
+  257  cd qc/
+  258  ls
+  259  multiqc . -n SRR15093882_trimmed_qc_report.html
+  260  pwd
+  261  ls
+  262  cd ../..
+  263  mkdir map_reads
+  264  bwa mem -t 4 -M
+  265    -o map_reads/SRR15093882.sam
+  266    /resources/GRCh38.primary_assembly.genome.fa
+  267    trimmed/SRR15093882_1.trimmed.fq.gz
+  268    trimmed/SRR15093882_2.trimmed.fq.gz
+  269  bwa mem   -t 4   -M   -o /SRR15093882.sam   /resources/GRCh38.primary_assembly.genome.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz
+  270  bwa mem   -t 4   -M   -o map_reads/SRR15093882.sam   /resources/GRCh38.primary_assembly.genome.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz
+  271  cd map_reads
+  272  ls
+  273  grep "SA" SRR15093882.sam | cut -f1 | sort | uniq | wc -l
+  274  (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ grep "SA" SRR15093882.sam | cut -f1 | sort | uniq | wc -l
+  275  12509
+  276  samtools sort -T SRR15093882.temp -o SRR15093882.sorted.bam SRR15093882.sam && samtools index SRR15093882.sorted.bam
+  277   cd ..
+  278  cd map_reads
+  279  ls
+  280  mkdir qc
+  281  samtools stats \
+  282    -d   SRR15093882.sorted.bam> qc/SRR15093882.samtools.stats
+  283  samtools stats SRR15093882.sorted.bam > qc/SRR15093882.samtools.stats
+  284  samtools flagstat SRR15093882.sorted.bam > qc/SRR15093882.samtools.flagstat
+  285  samtools depth SRR15093882.sorted.bam > qc/SRR15093882.samtools.depth
+  286  cd qc/
+  287  ls
+  288  less SRR15093882.samtools.flagstat
+  289  less SRR15093882.samtools.stats
+  290  cd ..
+  291  cd ..
+  292  source .bashrc
+  293  conda activate bioinf
+  294  cd my_pro
+  295  cd data
+  296  mkdir all_chr5
+  297  source .bashrc
+  298  conda activate bioinf
+  299  cd ..
+  300  cd ..
+  301  cd my_pro
+  302  home
+  303  /home/my_pro
+  304  cd my_pro
+  305  conda activate bioinf
+  306  cd my_pro
+  307  cd /home/franza/my_project
+  308  cd
+  309  cd franza
+  310  conda deactivate
+  311  source .bashrc
+  312   conda activate bioinf
+  313  cd my_pro
+  314  cd data
+  315  wget https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr5.fa.gz
+  316  gunzip chr5.fa.gz
+  317  bwa index chr5.fa
+  318  ls
+  319  bwa mem   -t 4   -M   -o all_chr5/SRR15093882_chr5.sam   chr5.fa   trimmed/SRR15093882_1.trimmed.fq.gz   trimmed/SRR15093882_2.trimmed.fq.gz
+  320  source .bashrc
+  321  conda activate bioinf
+  322  cd my_pro
+  323  cd data
+  324  ls
+  325  cd all_chr5
+  326  ls
+  327  mkdir qc_chr5
+  328  source .bashrc
+  329  conda activate bioinf
+  330  cd my_pro
+  331  cd data
+  332  cd map_reads
+  333  ls
+  334  samtools depth -a SRR15093882.sorted.bam > qc/SRR15093882_all.samtools.depth
+  335  source .bashrc
+  336  conda activate bioinf
+  337  cd my_pro
+  338  cd data
+  339  cd all_chr5
+  340  ls
+  341  samtools view -b -o SRR15093882_chr5.bam SRR15093882_chr5.sam
+  342  samtools sort -T SRR15093882_chr5.temp -o SRR15093882_chr5.sorted.bam SRR15093882_chr5.bam && samtools index SRR15093882_chr5.sorted.bam
+  343  ls
+  344  samtools stats SRR15093882_chr5.sorted.bam > qc_chr5/SRR15093882.samtools.stats
+  345  samtools flagstat SRR15093882_chr5.sorted.bam > qc_chr5/SRR15093882.samtools.flagstat
+  346  samtools depth SRR15093882_chr5.sorted.bam > qc_chr5/SRR15093882.samtools.depth
+  347  cd qc_chr5/
+  348  ls
+  349  less SRR15093882.samtools.flagstat
+  350  less SRR15093882.samtools.stats
+  351  head SRR15093882.samtools.depth
+  352  awk '{if($3>=20) c++} END {print "Percentuale di basi coperte ≥20x:", c/NR*100 "%"}' SRR15093882.samtools.depth
+  353  awk '{ if ($3 >= 20) copertura_alta++ } END { print copertura_alta / NR * 100 "%" }' qc_chr5/SRR15093882.samtools.depth
+  354  awk '{ if ($3 >= 20) copertura_alta++ } END { print copertura_alta / NR * 100 "%" }' SRR15093882.samtools.depth
+  355  awk --help
+  356  ls
+  357  cd ..
+  358  ls
+  359  ls
+  360   source .bashrc
+  361  conda activate bioinf
+  362  cd my_pro
+  363  cd data
+  364  for chr in {1..22}; do     samtools depth -a -r chr${chr} map_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";  fi; done
+  365  for chr in {1..22}; do     samtools depth -a -r chr${chr} map_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";                 fi; done
+  366  echo -e "Chromosome\tPercent_covered_≥20x\tCovered_bases\tTotal_bases" > coverage_analysis\coverage_report.txt
+  367  for chr in $(seq 1 22); do   chrom="chr$chr";   samtools depth -a -r "$chrom" SRR15093882.sorted.bam |   awk -v chr="$chrom" '{
+  368        if ($3 >= 20) c++;
+  369        total++;
+  370      } END {
+  371        printf "%s\t%.2f%%\t%d\t%d\n", chr, (c/total)*100, c, total;
+  372      }' >> coverage_analysis/coverage_report.txt; done
+  373  echo -e "Chromosome\tPercent_covered_≥20x\tCovered_bases\tTotal_bases" > coverage_analysis\coverage_report.txt
+  374  for chr in $(seq 1 22); do   chrom="chr$chr";   samtools depth -a -r "$chrom" map_reads/SRR15093882.sorted.bam |   awk -v chr="$chrom" '{
+  375        if ($3 >= 20) c++;
+  376        total++;
+  377      } END {
+  378        printf "%s\t%.2f%%\t%d\t%d\n", chr, (c/total)*100, c, total;
+  379      }' >> coverage_analysis/coverage_report.txt; done
+  380  echo -e "Chromosome\tPercent_covered_≥20x\tCovered_bases\tTotal_bases" > coverage_analysis\coverage_report.txt
+  381  for chr in $(seq 1 22); do   chrom="chr$chr";   samtools depth -a -r "$chrom" map_reads/SRR15093882.sorted.bam |   awk -v chr="$chrom" '{
+  382        if ($3 >= 20) c++;
+  383        total++;
+  384      } END {
+  385        printf "%s\t%.2f%%\t%d\t%d\n", chr, (c/total)*100, c, total;
+  386      }' >> coverage_analysis/coverage_report.txt; done
+  387  source .bashrc
+  388  conda activate bioinf
+  389  cd my_pro
+  390  cd data
+  391  cd all_chr5
+  392  ls
+  393  samtools depth -a SRR15093882_chr5.sorted.bam > qc_chr5/SRR15093882_all.samtools.depth
+  394  cd qc_chr5/
+  395  ls
+  396  awk '{ if ($3 >= 20) copertura_alta++ } END { print copertura_alta / NR * 100 "%" }' SRR15093882_all.samtools.depth
+  397  source .bashrc
+  398  conda activate bioinf
+  399  cd my_pro
+  400   cd data
+  401  cd map_reads
+  402  samtools depth -a SRR15093882.sorted.bam > qc/SRR15093882_all.samtools.depth
+  403  ls
+  404  cd ..
+  405  mkdir coverage_analysis
+  406  for chr in {1..22}; do     samtools depth -r chr${chr} mapped_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";     fi; done
+  407  for chr in {1..22}; do     samtools depth -r chr${chr} mapped_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";     fi; done
+  408  for chr in {1..22}; do     samtools depth -r chr${chr} mapped_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";  fi; done
+  409  for chr in {1..22}; do     samtools depth -r chr${chr} mapped_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";  fi; done
+  410  for chr in {1..22}; do     samtools depth -r chr${chr} map_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";  fi; done
+  411  source .bashrc
+  412  conda activate bioinf
+  413  cd my_pro
+  414  ls
+  415  cd data
+  416  ls
+  417  pwd
+  418  for chr in {1..22}; do     samtools depth -a -r chr${chr} map_reads/SRR15093882.sorted.bam > coverage_analysis/chr${chr}_coverage.txt;     TOTAL_BASES=$(wc -l < coverage_analysis/chr${chr}_coverage.txt);     COVERED_20X=$(awk '$3>=20' coverage_analysis/chr${chr}_coverage.txt | wc -l);     if [ $TOTAL_BASES -gt 0 ]; then         PERCENTAGE=$(echo "scale=2; $COVERED_20X * 100 / $TOTAL_BASES" | bc -l);         echo "chr${chr}: ${PERCENTAGE}% coverage ≥20x";                 fi; done
+  419   source .bashrc
+  420  conda activate bioinf
+  421  cd my_pro
+  422  cd data
+  423  cd all_chr5/
+  424  ls
+  425  mkdic genes
+  426  mkdir genes
+  427  samtools depth   -r chr5:35852695-35879603    SRR15093882_chr5.sorted.bam > genes/SRR15093882.samtools.depth.IL7R
+  428  samtools coverage -r chr5:35852695-35879603 SRR15093882_chr5.sorted.bam
+  429  samtools depth   -r chr5:171387116-171411810    SRR15093882_chr5.sorted.bam > genes/SRR15093882.samtools.depth.NPM1
+  430  samtools coverage -r chr5:171387116-171411810 SRR15093882_chr5.sorted.bam
+  431  samtools depth   -r chr5:150053291-150113372    SRR15093882_chr5.sorted.bam > genes/SRR15093882.samtools.depth.CSF1R
+  432  samtools coverage -r chr5:150053291-150113372 SRR15093882_chr5.sorted.bam
+  433  samtools depth   -r chr5:138465479-138469303    SRR15093882_chr5.sorted.bam > genes/SRR15093882.samtools.depth.EGR1
+  434  samtools coverage -r chr5:138465479-138469303 SRR15093882_chr5.sorted.bam
+  435  source .bashrc
+  436  conda activate bioinf
+  437  cd my_pro
+  438  cd data
+  439  ls
+  440  source .bashrc
+  441  conda activate bioinf
+  442  hystory
+  443  history > history_comandi.txt
+  444  source .bashrc
+  445  conda activate bioinf
+  446  conda activate
+  447  source .brach
+  448  source .bashrc
+  449  conda activate bioinf
+  450  cd my_po
+  451  cd my_pro
+  452  cd data
+  453  bam_file="map_reads/SRR15093882.sorted.bam" outp="coverage_analysis" mkdir -p"$outp" for chr in {1..22}; do
+  454  bam_file="map_reads/SRR15093882.sorted.bam"
+  455  outp="coverage_analysis"
+  456  for i in {1..22}; do                    samtools depth -a -r chr${chr} "$bam_file" > "$outp/chr${chr}_coverage.txt";     tot_basi=$(wc -l < "$outp/chr${chr}_coverage.txt");     copertura=$(awk '$3>=20' "$outp/chr${chr}_coverage.txt" | wc -l);     if [ $tot_basi -gt 0 ]; then         percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l);         echo "chr${chr}: ${percentuale}% delle basi hanno copertura ≥20x";     else             fi
+  457  bam_file="map_reads/SRR15093882.sorted.bam"
+  458  outp="coverage_analysis"
+  459  for i in {1..22}; do                    samtools depth -a -r chr${chr} "$bam_file" > "$outp/chr${chr}_coverage.txt";     tot_basi=$(wc -l < "$outp/chr${chr}_coverage.txt");     copertura=$(awk '$3>=20' "$outp/chr${chr}_coverage.txt" | wc -l);     if [ $tot_basi -gt 0 ]; then         percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l);         echo "chr${chr}: ${percentuale}% delle basi hanno copertura ≥20x";     else
+  460  bam_file="map_reads/SRR15093882.sorted.bam"
+  461  outp="coverage_analysis"
+  462  for i in {1..22}; do                    samtools depth -a -r chr${chr} "$bam_file" > "$outp/chr${chr}_coverage.txt";     tot_basi=$(wc -l < "$outp/chr${chr}_coverage.txt");     copertura=$(awk '$3>=20' "$outp/chr${chr}_coverage.txt" | wc -l);     if [ $tot_basi -gt 0 ]; then         percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l);         echo "chr${chr}: ${percentuale}% delle basi hanno copertura ≥20x";     else             fi
+  463  done
+  464  bam_file="map_reads/SRR15093882.sorted.bam"
+  465  outp="coverage_analysis"
+  466  for i in {1..22}; do          samtools depth -a -r chr${i} "$bam_file" > "$outp/chr${i}_coverage.txt";          tot_basi=$(wc -l < "$outp/chr${i}_coverage.txt");     copertura=$(awk '$3>=20' "$outp/chr${i}_coverage.txt" | wc -l);          if [ $tot_basi -gt 0 ]; then         percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l);         echo "chr${i}: ${percentuale}% delle basi hanno copertura ≥20x";     fi; don
+  467  bam_file="map_reads/SRR15093882.sorted.bam"
+  468  outp="coverage_analysis"
+  469  for i in {1..22}; do          samtools depth -a -r chr${i} "$bam_file" > "$outp/chr${i}_coverage.txt";          tot_basi=$(wc -l < "$outp/chr${i}_coverage.txt");     copertura=$(awk '$3>=20' "$outp/chr${i}_coverage.txt" | wc -l);          if [ $tot_basi -gt 0 ]; then         percentuale=$(echo "scale=2; $copertura * 100 / $tot_basi" | bc -l);         echo "chr${i}: ${percentuale}% delle basi hanno copertura ≥20x";     fi; done
+  470  soure .bashrc
+  471  source .bashrc
+  472  conda activate bioinf
+  473  cd my_pro
+  474  ls
+  475  cd data
+  476  ls
+  477  cd all_chr5
+  478  ls
+  479  rs SRR15093882_chr5.bam
+  480  rm SRR15093882_chr5.bam
+  481  ls
+  482   source .bashrc
+  483  conda activate bioinf
+  484  cd my_pro
+  485  cd data
+  486  ls
+  487  cd coverage_analysis/
+  488  ls
+  489  pwd
+  490   source .bashrc
+  491   conda activate bioinf
+  492  cd my_pro
+  493  cd data
+  494  ls
+  495  cd all_chr5/
+  496  ls
+  497  samtools view -b -o  SRR15093882_chr5.sam SRR15093882_chr5.bam
+  498  samtools view -Sb SRR15093882.bam > SRR15093882.sam
+  499  samtools view -Sb SRR15093882.sam > SRR15093882.bam
+  500  ls
+  501  source .bashrc
+  502  conda activate bioinf
+  503  cd my_pro/
+  504  history
