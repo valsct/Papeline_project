@@ -9,10 +9,13 @@ PS C:\Users\valen\Desktop\tec_seq> ssh -i studentkey.pem franza@15.161.204.72
 franza@ip-172-31-6-96:~$ source .bashrc
 franza@ip-172-31-6-96:~$ conda
 franza@ip-172-31-6-96:~$ conda activate bioinf
+
 # creazione directory del progetto
 (bioinf) franza@ip-172-31-6-96:~$ mkdir my_pro
+
 # creazione directory per le sequenze scaricate 
 (bioinf) franza@ip-172-31-6-96:~$ mkdir data
+
 # scaricato le sequenze da SRA-Explorer 
 (bioinf) franza@ip-172-31-6-96:~/data$ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_1.fastq.gz 
                                             ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR150/082/SRR15093882/SRR15093882_2.fastq.gz
@@ -30,12 +33,12 @@ SRR15093882_1.fastq.gz  SRR15093882_2.fastq.gz  SRR15093882_qc_report.html  SRR1
 
 
 #shell pc per scaricare il file nella cartella tec_seq per visualizzare multi QC
-PS C:\Users\valen\Desktop\tec_seq>  scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/SRR15093882_qc_report.html .
-SRR15093882_qc_report.html                                                            100% 1111KB   2.8MB/s   00:00
-PS C:\Users\valen\Desktop\tec_seq>
 #analisi multi QC : in sezione Adapter Content ho visualizzato gli adattori per efettuare il Trimming 
 #illumina small rna 3' adapter : TGGAATTCTCGGGTGCCAAGG (read1)
 #illumina universal adapter : AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC (read2)
+PS C:\Users\valen\Desktop\tec_seq>  scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/SRR15093882_qc_report.html .
+SRR15093882_qc_report.html                                                            100% 1111KB   2.8MB/s   00:00
+PS C:\Users\valen\Desktop\tec_seq>
 
 # Mapping - Allineamento whole genome
 
@@ -151,7 +154,7 @@ SRR15093882_1.trimmed_fastqc.zip   SRR15093882_2.trimmed_fastqc.zip   SRR1509388
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/trimmed/qc$ pwd
 /home/franza/my_pro/data/trimmed/qc
 
-#andare in shell per scaricare il file 
+#andare in altra shell per scaricare il file 
 
 PS C:\Users\valen\Desktop\tec_seq>  scp -i studentkey.pem franza@15.161.204.72:/home/franza/my_pro/data/trimmed/qc/SRR15093882_trimmed_qc_report.html .
 SRR15093882_trimmed_qc_report.html                                                    100% 1109KB   2.9MB/s   00:00
@@ -177,11 +180,8 @@ PS C:\Users\valen\Desktop\tec_seq>
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data$ cd map_reads
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ ls
 SRR15093882.sam
-# Voglio contare quante letture hanno allineamenti secondari --> out: 12.509 letture che hanno almeno un allineamento secondario
-(bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ grep "SA" SRR15093882.sam | cut -f1 | sort | uniq | wc -l
-12509
 
-#convertito file, ordinato e indicizzato
+#convertito file, lo ordino e lo indicizzo
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ samtools sort -T SRR15093882.temp -o SRR15093882.sorted.bam SRR15093882.sam && samtools index SRR15093882.sorted.bam
 [bam_sort_core] merging from 3 files and 1 in-memory blocks...
 (bioinf) franza@ip-172-31-6-96:~/my_pro/data/map_reads$ ls
